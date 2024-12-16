@@ -5,7 +5,7 @@ circuits.
 
 ## Mock prover
 
-`halo2::dev::MockProver` is a tool for debugging circuits, as well as cheaply verifying
+`halo2_proofs::dev::MockProver` is a tool for debugging circuits, as well as cheaply verifying
 their correctness in unit tests. The private and public inputs to the circuit are
 constructed as would normally be done to create a proof, but `MockProver::run` instead
 creates an object that will test every constraint in the circuit directly. It returns
@@ -18,18 +18,18 @@ representations of circuits.
 
 On Debian systems, you will need the following additional packages:
 ```plaintext
-sudo apt install cmake libexpat1-dev libfreetype6-dev
+sudo apt install cmake libexpat1-dev libfreetype6-dev libcairo2-dev
 ```
 
 ### Circuit layout
 
-`halo2::dev::CircuitLayout` renders the circuit layout as a grid:
+`halo2_proofs::dev::CircuitLayout` renders the circuit layout as a grid:
 
 ```rust,ignore,no_run
-{{#include ../../../examples/circuit-layout.rs:dev-graph}}
+{{#include ../../../halo2_proofs/examples/circuit-layout.rs:dev-graph}}
 ```
 
-- Columns are layed out from left to right as instance, advice, and fixed. The order of
+- Columns are laid out from left to right as instance, advice and fixed. The order of
   columns is otherwise without meaning.
   - Instance columns have a white background.
   - Advice columns have a red background.
@@ -42,8 +42,8 @@ sudo apt install cmake libexpat1-dev libfreetype6-dev
 
 ### Circuit structure
 
-`halo2::dev::circuit_dot_graph` builds a [DOT graph string] representing the given
-circuit, which can then be rendered witha variety of [layout programs]. The graph is built
+`halo2_proofs::dev::circuit_dot_graph` builds a [DOT graph string] representing the given
+circuit, which can then be rendered with a variety of [layout programs]. The graph is built
 from calls to `Layouter::namespace` both within the circuit, and inside the gadgets and
 chips that it uses.
 
@@ -63,7 +63,7 @@ fn main() {
     };
 
     // Generate the DOT graph string.
-    let dot_string = halo2::dev::circuit_dot_graph(&circuit);
+    let dot_string = halo2_proofs::dev::circuit_dot_graph(&circuit);
 
     // Now you can either handle it in Rust, or just
     // print it out to use with command-line tools.

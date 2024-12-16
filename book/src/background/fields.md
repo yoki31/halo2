@@ -11,7 +11,7 @@ numbers $\mathbb{R}$ are an example of a field with uncountably many elements.
 Halo makes use of _finite fields_ which have a finite number of elements. Finite fields
 are fully classified as follows:
 
-- if $\mathbb{F}$ is a finite field, it contains $|\mathbb{F}| = p^k$ elements  for some
+- if $\mathbb{F}$ is a finite field, it contains $|\mathbb{F}| = p^k$ elements for some
   integer $k \geq 1$ and some prime $p$;
 - any two finite fields with the same number of elements are isomorphic. In particular,
   all of the arithmetic in a prime field $\mathbb{F}_p$ is isomorphic to addition and
@@ -248,7 +248,7 @@ odd, and so half of all elements are squares.
 In order to compute the square root, we can first raise the element
 $a = \alpha^i \cdot  \beta^j$ to the power $t$ to "kill" the $t$-order component, giving
 
-$$a^t = \alpha^{it \pmod 2^k} \cdot \beta^{jt \pmod t} = \alpha^{it \pmod 2^k}$$
+$$a^t = \alpha^{it \pmod {2^k}} \cdot \beta^{jt \pmod t} = \alpha^{it \pmod {2^k}}$$
 
 and then raise this result to the power $t^{-1} \pmod{2^k}$ to undo the effect of the
 original exponentiation on the $2^k$-order component:

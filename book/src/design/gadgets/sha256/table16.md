@@ -488,7 +488,7 @@ Output: $\Sigma_1(E) = R^{even} = R_0^{even} + 2^{16} R_1^{even}$
 
 ### σ_0 gate
 #### v1
-v1 of the $\sigma_0$ gate takes in a word that's split into $(3, 4, 11, 14)$-bit chunks (already constrained by message scheduling). We refer to these chunks respectively as $(a(3), b(4), c(11), d(14)).$  $b(4$ is further split into two 2-bit chunks $b(4)^{lo},b(4)^{hi}.$ We witness the spread versions of the small chunks. We already have $\texttt{spread}(c(11))$ and $\texttt{spread}(d(14))$ from the message scheduling.
+v1 of the $\sigma_0$ gate takes in a word that's split into $(3, 4, 11, 14)$-bit chunks (already constrained by message scheduling). We refer to these chunks respectively as $(a(3), b(4), c(11), d(14)).$  $b(4)$ is further split into two 2-bit chunks $b(4)^{lo},b(4)^{hi}.$ We witness the spread versions of the small chunks. We already have $\texttt{spread}(c(11))$ and $\texttt{spread}(d(14))$ from the message scheduling.
 
 $(X ⋙ 7) \oplus (X ⋙ 18) \oplus (X ≫ 3)$ is equivalent to
 $(X ⋙ 7) \oplus (X ⋘ 14) \oplus (X ≫ 3)$.
@@ -669,7 +669,7 @@ with interpolation polynomials:
 - $l_0(a) = \frac{(a - 7)(a - 6)(a - 5)(a - 4)(a - 3)(a - 2)(a - 1)}{(-7)(-6)(-5)(-4)(-3)(-2)(-1)}$ ($\mathtt{spread}(000) = 000000$)
 - $l_1(a) = \frac{(a - 7)(a - 6)(a - 5)(a - 4)(a - 3)(a - 2)(a)}{(-6)(-5)(-4)(-3)(-2)(-1)(1)}$ ($\mathtt{spread}(001) = 000001$)
 - $l_2(a) = \frac{(a - 7)(a - 6)(a - 5)(a - 4)(a - 3)(a - 1)(a)}{(-5)(-4)(-3)(-2)(-1)(1)(2)}$ ($\mathtt{spread}(010) = 000100$)
-- $l_3(a) = \frac{(a - 7)(a - 6)(a - 5)(a - 3)(a - 2)(a - 1)(a)}{(-4)(-3)(-2)(-1)(1)(2)(3)}$ ($\mathtt{spread}(011) = 000101$)
+- $l_3(a) = \frac{(a - 7)(a - 6)(a - 5)(a - 4)(a - 2)(a - 1)(a)}{(-4)(-3)(-2)(-1)(1)(2)(3)}$ ($\mathtt{spread}(011) = 000101$)
 - $l_4(a) = \frac{(a - 7)(a - 6)(a - 5)(a - 3)(a - 2)(a - 1)(a)}{(-3)(-2)(-1)(1)(2)(3)(4)}$ ($\mathtt{spread}(100) = 010000$)
 - $l_5(a) = \frac{(a - 7)(a - 6)(a - 4)(a - 3)(a - 2)(a - 1)(a)}{(-2)(-1)(1)(2)(3)(4)(5)}$ ($\mathtt{spread}(101) = 010001$)
 - $l_6(a) = \frac{(a - 7)(a - 5)(a - 4)(a - 3)(a - 2)(a - 1)(a)}{(-1)(1)(2)(3)(4)(5)(6)}$ ($\mathtt{spread}(110) = 010100$)
